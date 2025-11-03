@@ -1,0 +1,16 @@
+services:
+  frontend:
+    build:
+      context: .
+      target: development-dependencies-env
+    ports:
+      - '5173:5173'
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=${NODE_ENV}
+    restart: unless-stopped
+    command: pnpm run dev
+    profiles:
+      - dev
