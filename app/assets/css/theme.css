@@ -58,6 +58,9 @@ body {
   /* Custom tokens */
   --d-spacing: 24px;
   --d-radius: var(--radius-xl);
+
+  --color-success: var(--color-green-500);
+  --color-danger: var(--color-destructive);
 }
 
 :root {
