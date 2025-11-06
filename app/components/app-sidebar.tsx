@@ -86,10 +86,11 @@ const placeholderTeams = [
   }
 ];
 
-const placeholderUser = {
+const placeholderUser: User = {
   name: 'john doe',
   email: 'john.doe@gmail.com',
-  avatar: 'https://github.com/evilrabbit.png'
+  role: 'admin',
+  avatar_url: 'https://github.com/evilrabbit.png'
 };
 
 export function AppSidebar() {
