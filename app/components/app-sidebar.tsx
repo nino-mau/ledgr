@@ -32,12 +32,13 @@ import {
   CollapsibleTrigger,
   CollapsibleContent
 } from '@radix-ui/react-collapsible';
+import { useLocation } from 'react-router';
 
 // Menu items.
 const items = [
   {
     title: 'Overview',
-    url: '/',
+    url: '/overview',
     icon: ChartColumnBig
   },
   {
@@ -113,7 +114,12 @@ export function AppSidebar() {
                 >
                   <SidebarMenuItem>
                     <CollapsibleTrigger asChild>
-                      <SidebarMenuButton tooltip={item.title}>
+                      <SidebarMenuButton
+                        isActive={
+                          item.url == useLocation().pathname && !item.isActive
+                        }
+                        tooltip={item.title}
+                      >
                         {item.icon && <item.icon />}
                         <span>{item.title}</span>
                         <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
@@ -123,7 +129,10 @@ export function AppSidebar() {
                       <SidebarMenuSub>
                         {item.items?.map((subItem) => (
                           <SidebarMenuSubItem key={subItem.title}>
-                            <SidebarMenuSubButton asChild>
+                            <SidebarMenuSubButton
+                              isActive={item.url == useLocation().pathname}
+                              asChild
+                            >
                               <a href={subItem.url}>
                                 <span>{subItem.title}</span>
                               </a>
@@ -136,7 +145,10 @@ export function AppSidebar() {
                 </Collapsible>
               ) : (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
+                  <SidebarMenuButton
+                    isActive={item.url == useLocation().pathname}
+                    asChild
+                  >
                     <a href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
