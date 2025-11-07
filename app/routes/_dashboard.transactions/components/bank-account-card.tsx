@@ -1,11 +1,7 @@
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
 import { ChevronsUpDown } from 'lucide-react';
 import { type ComponentType } from 'react';
 import { Card, CardContent } from '~/components/ui/card';
 import dateFromNow from '~/utils/dates';
-
-dayjs.extend(relativeTime);
 
 type BankAccountCardProps = {
   name: string;
@@ -28,7 +24,7 @@ export default function BankAccountCard(props: BankAccountCardProps) {
           </div>
         </div>
         <div className="flex flex-row items-center gap-4">
-          <p className="text-xl font-bold">{String(props.balance)}€</p>
+          <p className="text-2xl font-semibold">{String(props.balance)}€</p>
           <ChevronsUpDown size={18} />
         </div>
       </CardContent>
