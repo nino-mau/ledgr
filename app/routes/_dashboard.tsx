@@ -5,7 +5,7 @@ import { SidebarProvider } from '~/components/ui/sidebar';
 
 export default function DashboardLayout() {
   return (
-    <div className="bg-background h-svh p-(--d-spacing)">
+    <div className="h-svh p-(--d-spacing)">
       <SidebarProvider>
         <AppSidebar />
         <main className="ml-(--d-spacing) grow">

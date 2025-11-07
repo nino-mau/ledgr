@@ -10,11 +10,14 @@
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  @apply dark:bg-background bg-white;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+
+  background-color: var(--background);
+  min-height: 100vh;
 }
 
 @theme inline {
