@@ -63,6 +63,7 @@ body {
   --d-radius: var(--radius-xl);
 
   --color-success: var(--color-green-500);
+  --color-warning: var(--color-amber-500);
   --color-danger: var(--color-destructive);
 }
 
