@@ -108,14 +108,14 @@ function TransactionsList(props: TransactionsListProps) {
         {transactionsChunk.map((t) => (
           <li className="flex w-full flex-row gap-5 pb-5">
             <div className="flex max-h-[74px] w-15 flex-col items-center justify-center">
-              <Separator orientation="vertical" />
-              <div className="flex h-fit flex-col items-center">
+              <Separator className="h-auto" orientation="vertical" />
+              <div className="bg-background z-10 flex h-fit flex-col items-center">
                 <p className="text-base font-bold">
                   {dayjs(t.created_at).format('DD')}
                 </p>
                 <p className="text-sm">{dayjs(t.created_at).format('MMM.')}</p>
               </div>
-              <Separator orientation="vertical" />
+              <Separator className="h-auto" orientation="vertical" />
             </div>
             <TransactionItem key={t.id} transaction={t} />
           </li>

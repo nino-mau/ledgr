@@ -21,7 +21,7 @@ export default function TransactionItem(props: TransactionItemProps) {
       role="listitem"
     >
       <ItemContent className="flex flex-row items-center">
-        <div className="bg-secondary hover:ring-secondary/30 relative flex size-10 items-center justify-center rounded-md transition-all hover:ring-3">
+        <div className="bg-secondary hover:ring-muted/50 relative flex size-10 items-center justify-center rounded-md transition-all hover:ring-3">
           <Paperclip size={20} />
           {props.transaction.is_justified && (
             <div className="bg-success absolute -right-1 -bottom-1 rounded-sm p-0.5">
