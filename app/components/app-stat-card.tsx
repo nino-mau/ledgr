@@ -29,7 +29,7 @@ export default function AppStatCard(props: AppStatCardProps) {
           <p className="text-muted-foreground text-sm">{props.title}</p>
           <p className="text-xl font-bold">{props.label}</p>
         </div>
-        <Badge className={cn(props.colorClasses, 'mt-4 text-xs')}>
+        <Badge variant="outline" className={cn('mt-4 text-xs')}>
           {props.badgeLabel}
         </Badge>
       </CardContent>
