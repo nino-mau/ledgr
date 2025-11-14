@@ -1,11 +1,8 @@
-import { CheckCheck, ShieldAlertIcon } from 'lucide-react';
-import type { Button } from '~/components/ui/button';
+import { CheckCheck } from 'lucide-react';
 import {
   Item,
-  ItemActions,
   ItemContent,
   ItemDescription,
-  ItemMedia,
   ItemTitle
 } from '~/components/ui/item';
 
