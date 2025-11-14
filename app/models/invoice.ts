@@ -5,6 +5,14 @@ export type InvoiceStatus =
   | 'overdue'
   | 'canceled';
 
+export type InvoiceItem = {
+  id: string;
+  name: string;
+  quantity: number;
+  amount: number;
+  rate: number;
+};
+
 export type Invoice = {
   id: string;
   displayId: string;
@@ -12,6 +20,7 @@ export type Invoice = {
   balance: number;
   totalAmount: number;
   description: string;
+  items?: InvoiceItem[];
   comments: string[];
   status: InvoiceStatus;
   dueDate: string;
