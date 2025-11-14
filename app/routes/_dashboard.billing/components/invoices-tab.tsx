@@ -1,29 +1,28 @@
 import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent
-} from '~/components/ui/accordion';
-import {
   BadgeCheck,
   ChevronDownIcon,
   CircleDashed,
   Clock1,
   ClockFading,
-  FilePen
+  Plus,
+  SearchIcon
 } from 'lucide-react';
 import AppStatCard from '~/components/app-stat-card';
-import { Card, CardContent } from '~/components/ui/card';
-import InvoicesTable from './invoices-table';
+import NavButton from '~/components/nav-button';
+import { Badge } from '~/components/ui/badge';
 import { Button } from '~/components/ui/button';
+import { Card, CardContent } from '~/components/ui/card';
 import {
   Collapsible,
-  CollapsibleTrigger,
-  CollapsibleContent
+  CollapsibleContent,
+  CollapsibleTrigger
 } from '~/components/ui/collapsible';
-import { useState } from 'react';
-import { cn } from '~/lib/utils';
-import { Badge } from '~/components/ui/badge';
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput
+} from '~/components/ui/input-group';
+import InvoicesTable from './invoices-table';
 
 type InvoicesTabProps = {};
 
@@ -63,6 +62,16 @@ export default function InvoicesTab(props: InvoicesTabProps) {
           colorClasses="text-danger bg-danger/10"
           className="col-span-1"
         />
+      </div>
+      {/* Actions Menu */}
+      <div className="flex flex-row justify-end gap-4">
+        <InputGroup className="w-60">
+          <InputGroupInput placeholder="Search..." />
+          <InputGroupAddon>
+            <SearchIcon />
+          </InputGroupAddon>
+        </InputGroup>
+        <NavButton to="/invoices/create" label="New Invoice" icon={Plus} />
       </div>
       {/* Draft Invoices Collapsible */}
       <Card className="pt-4 pb-0">
